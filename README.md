@@ -79,6 +79,7 @@ sudo reboot
 ```
 
 
-Credtis:
+## Credtis:
 for the HTML5 template html5up.net | @ajlkn
+
 for the way better implemention of the gsm modul as I did. https://github.com/jakhax/raspberry-pi-sim800l-gsm-module
