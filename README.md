@@ -83,6 +83,7 @@ pip3 install gunicorn
 gunicorn -w 4 --bind 0.0.0.0:8080 app:app
 ```
 #config Systemd
+
 /etc/systemd/system/gunicorn.service
 
 ```
@@ -105,6 +106,9 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
 ```
+To enable it
+
+`sudo systemctl enable gunicorn.service`
 
 ## Credtis:
 for the HTML5 template html5up.net | @ajlkn
