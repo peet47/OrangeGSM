@@ -82,7 +82,7 @@ sudo reboot
 pip3 install gunicorn
 gunicorn -w 4 --bind 0.0.0.0:8080 app:app
 ```
-#config Systemd
+# config Systemd
 
 /etc/systemd/system/gunicorn.service
 
