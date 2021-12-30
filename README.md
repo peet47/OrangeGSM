@@ -78,8 +78,10 @@ sudo rpi-update
 sudo reboot
 ```
 ## Run with gunicorn
-```pip3 install gunicorn
-gunicorn -w 4 --bind 0.0.0.0:8080 app:app```
+```
+pip3 install gunicorn
+gunicorn -w 4 --bind 0.0.0.0:8080 app:app
+```
 
 ## Credtis:
 for the HTML5 template html5up.net | @ajlkn
