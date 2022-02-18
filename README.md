@@ -1,5 +1,5 @@
 ## Orange GSM
-![alt text](https://github.com/peet47/OrangeGSM/raw/master/images/img1.png)
+![alt text](https://github.com/peet47/OrangeGSM/blob/main/images/img1.png?raw=true)
 Just a small funny project during the holidays.
 
 ## App setup
