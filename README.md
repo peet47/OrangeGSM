@@ -1,5 +1,5 @@
 ## Orange GSM
-![alt text](https://github.com/peet47/OrangeGSM/blob/main/images/img1.png)
+![alt text](https://github.com/peet47/OrangeGSM/raw/master/images/img1.png)
 Just a small funny project during the holidays.
 
 ## App setup
@@ -77,40 +77,8 @@ sudo apt-get upgrade
 sudo rpi-update
 sudo reboot
 ```
-## Run with gunicorn
-```
-pip3 install gunicorn
-gunicorn -w 4 --bind 0.0.0.0:8080 app:app
-```
-# config Systemd
 
-/etc/systemd/system/gunicorn.service
 
-```
-[Unit]
-Description=gunicorn daemon
-After=network.target
-
-[Service]
-Type=notify
-# the specific user that our service will run as
-User=pi
-Group=pi
-WorkingDirectory=/home/pi/Desktop/OrangeGSM
-ExecStart=/home/pi/.local/bin/gunicorn --bind 0.0.0.0:8080 app:app
-ExecReload=/bin/kill -s HUP $MAINPID
-KillMode=mixed
-TimeoutStopSec=5
-PrivateTmp=true
-
-[Install]
-WantedBy=multi-user.target
-```
-To enable it
-
-`sudo systemctl enable gunicorn.service`
-
-## Credtis:
+Credtis:
 for the HTML5 template html5up.net | @ajlkn
-
 for the way better implemention of the gsm modul as I did. https://github.com/jakhax/raspberry-pi-sim800l-gsm-module

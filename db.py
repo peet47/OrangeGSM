@@ -22,10 +22,12 @@ class db_ops(object):
         Create a new entry into the sms's table
         :param conn:
         :param sms:
+        :param action:
         :return: 
         """
-        sql = ''' INSERT INTO sms(tele_number,received_date,received_time,message)
-                VALUES(?,?,?,?) '''
+        sql = ''' INSERT INTO sms(tele_number,received_date,received_time,message,action)
+                VALUES(?,?,?,?,?) '''
+        print(sms)
         cur = conn.cursor()
         cur.execute(sql, sms)
         conn.commit()
@@ -33,7 +35,9 @@ class db_ops(object):
     
     def read_entries(conn):
         cur = conn.cursor()
-        query_string = "SELECT * FROM sms ORDER BY id DESC"
+        update_row = "UPDATE sms SET action = 'receive' where action = ''"
+        cur.execute(update_row)
+        query_string = "SELECT * FROM sms WHERE action = 'receive' ORDER BY id DESC"
         cur.execute(query_string)
         data = cur.fetchall()
         return data
@@ -44,6 +48,7 @@ class db_ops(object):
                                             tele_number text NOT NULL,
                                             received_date text,
                                             received_time text,
+                                            action text,
                                             message text
                                         ); """
         try:

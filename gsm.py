@@ -91,8 +91,8 @@ class SIM800L:
                 params2 = params[0].split(':')
                 if params2[0]=='+CMGR':
                     number = params[1].replace('"',' ').strip()
-                    date   = params[3].replace('"',' ').strip()
-                    time   = params[4].replace('"',' ').strip()
+                    date   = params[2].replace('"',' ').strip()
+                    time   = params[3].replace('"',' ').strip()
                     return  [number,date,time,self.savbuf]
         return None
 
